@@ -1,0 +1,230 @@
+% Chapter Template
+
+\chapter{Test case} % Main chapter title
+
+\label{case} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{ChapterX}
+
+\lhead{\emph{Test case}} % Change X to a consecutive number; this is for the header on each page - perhaps a shortened title
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+\section{NASA Rotor 67 transonic axial compressor}
+
+The direct approach noise analysis is onducted on a NASA Rotor 67 (R67) transonic axial compressor. Originating as a first stage of two stage fan for evaluation of design procedures, validation of experimental facilities as well as meshing and CFD tools. The test case was used in a multitude of studies for turbomachinery aerodynamics, geometry optimisation, noise analyses and structural analyses. Full design procedure can be found in references \cite{r67design} and \citep{r67performance}. The CFD analysis and direct approach noise analysis is performed on a single passage of a first stage rotor of the compressor. The setup for the  calculations (apart from the single passage constraint) is relevant do case described in study \citep{r67laser}, which was the main source for geometry and flowfield data.
+
+\begin{figure}[h!]
+\centering % bo \centering nie wstawia dodatkowego odstępu
+\includegraphics[width=0.85\textwidth]{Pictures/r67_over.png}
+\caption{Geometry of NASA R67}
+\label{r67over}
+\end{figure}
+
+Basic parameters of the given rotor are, design pressure ratio of 1.63 at massflow of 33.25 kg/sec. The design rotational speed is 16 043 rpm, which yields a tip speed of 429 m/s and an inlet tip relative Mach number of 1.38. The rotor has 22 blades and an aspect ratio of 1.56 (based on average span/root axial chord). The inlet and exit tip diameters are 514 and 485 mm, respectively, and the inlet and exit hub/tip radius ratios are 0.375 and 0.478, respectively. A fillet radius of 1.78 mm is used at the airfoil-hub juncture. The square root of the mean square of the airfoil surface finish is 0.8 $\mu${}m or better, the airfoil surface tolerance is $\pm$ 0.04 mm, and the running tip clearance is approximately 1.0 mm \citep{r67laser}. Surface roughness and some of the geometrical features are omitted during the preparation of the geometry and CFD mesh for reasons described in sections \ref{3dgeom} and \ref{mesh}. General geometry of NASA R67 is presented on fig \ref{r67over}. Basic parameters of the test subject are presented in table \ref{tab:data}
+
+\begin{table}[ht!]
+\centering
+\caption{Basic R67 parameters} \label{tab:data}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Parameter   & Value & Unit \\ \midrule
+$\Pi$          & 1.63  & -    \\
+$\dot{m}$      & 33.25 & kg/s \\
+$\omega$       & 16043 & rpm  \\
+$v_t$          & 429   & m/s  \\
+$Ma_t$         & 1.38  & -    \\
+blade count    & 22    & -    \\ \bottomrule
+\end{tabular}
+\end{table}
+
+%----------------------------------------------------------------------------------------
+%	SECTION
+%----------------------------------------------------------------------------------------
+\section{3D geometry preparation} \label{3dgeom}
+%Geometry was prepared in Ansys ICEM 14.5 meshing software. Creating the geometry directly in the meshing software reduces the risk of creating flaws in the geometry, due to file translations. Mesh is created in millimeters.
+
+References \citep{r67design} and \citep{r67performance} provide the blade geometry for both stages of the compressor as a Multiple-Circular-Arc definition. In the MCA approach the design blade elements lie on conical surfaces which approximate the actual stream flow surfaces. More specifically, the mean camber line and the suction and pressure surface lines of a blade element are lines with a constant rate of angle change with path distance on a specified conical surface \citep{bladecompose}. Although relatively comfortable for design purposes, such approach requires transforming the MCA blade to Cartesian or cylindrical coordinates. Reference \citep{bladecompose} provides an extended definition of MCA blade description as well as Fortran code for generating blade cross-section and computing geometric properties of the blade.
+
+Source \citep{r67laser} provides a list of coordinates for 14 profiles of the 1st stage rotor blade suction and pressure surface, as well as coordinates for hub and casing path in the meridional plane. These coordinates were used to create the geometry of the single passage of the subject blade. Cartesian coordinates are also available in Appendix \ref{r67_coords_data} and project Github repository \citep{github}.
+
+%Geometry alignment is presented on figure \ref{geom_gcs}.
+The coordinate system is a standard right-hand Cartesian CS. Rotation axis is set to Z-axis with flow in positive Z direction. The compressor rotation is set as in right-hand rule, the compressor rotates in clockwise direction when viewing the blade leading edge. $Z = 0$ coordinate is defined by point number 1 on 1st blade design surface.
+
+%\begin{figure}[h!]
+%\centering % bo \centering nie wstawia dodatkowego odstępu
+%\includegraphics[width=0.85\textwidth]{Pictures/kitten-placeholder.jpg}
+%\caption{Global coordinate system for geometry}
+%\label{geom_gcs}
+%\end{figure}
+
+Hub and casing flow paths were created by importing formatted point data as a \mbox{b-spline} curve, followed by extrusion the curve to surface by rotating it by $\pm 60 \degree$. Suction and pressure surface of the blade were created by importing the Cartesian coordinates if the design airfoils and creating a lofted surface along the imported splines. Leading and trailing edge radii were created in a similar manner, with use of edge radius and edge tangency points given in original study \citep{r67laser}. Tip gap of the blade was created by offsetting the casing surface by 1.016 mm in the normal direction towards the rotation axis and creating a section line between blade surfaces and the offset surface.
+
+Due to the estimated mesh cell count, only one blade passage is created, therefore~a set of periodic surfaces must be defined. ICEM software is capable of creating a midline as an average of coordinates of two given lines. A midline was created for every design profile and was manually extended beyond the blade leading and trailing edge. Midlines were lofted to create a midsurface which was later on copied with rotation by $\pm 0.5 \cdot \frac{360 \degree}{22}$ to create two identical periodic surfaces.
+
+Aforementioned midlines were also rotated along Z-axis to create control surfaces for mesh stabilization and data acquisition down the process.
+
+Reference \citep{r67laser} provides coordinates of hub and casing for the full experiment, however only a rotating part of the experimental rotor setup is be used. Two surfaces normal to Z direction at coordinates Z = -13.74 mm and Z = 93.65 mm are placed as inlet and outlet boundary conditions. Geometry was finished by necessary extrusions, trimming and other finishing operations to ensure high quality surface for meshing.
+
+Physical experiment test compressor has a 1.78 mm fillet at airfoil-hub juncture. This feature was omitted as it would unnecessarily complicate the meshing process and increase the cell count.
+
+Such approach allowed for creating a geometry for single blade passage with centered blade of 1st stage rotor of the test compressor (Fig \ref{geom_final}).
+
+\begin{figure}[ht!]
+\centering % bo \centering nie wstawia dodatkowego odstępu
+\includegraphics[width=0.85\textwidth]{Pictures/r67_geom.jpg}
+\caption{Final single passage geometry. Some features hidden for clarity}
+\label{geom_final}
+\end{figure}
+
+%----------------------------------------------------------------------------------------
+%	SECTION
+%----------------------------------------------------------------------------------------
+\section{Meshing approach} \label{mesh}
+Following requirements are posed to the mesh for the discussed case:
+\begin{itemize}
+\item[-]Possibly low number of elements fulfilling the mesh sizing requirements stated in chapter \ref{direct_approach},
+\item[-] Mesh should be a fully structural mesh including the tip gap,
+\item[-] The periodic boundary mesh must be identical/conforming for both boundaries,
+\item[-] The mesh must have high quality metrics in terms of cell orthogonality and skew.
+%\item The cell aspect ratio should be limited to 5000 as defined by equation \ref{eq:aspect} 
+\end{itemize}
+
+The orthogonal quality (or orhogonality) of the mesh is calculated as in equation \ref{eq:ortho}. The orthogonality value ranges from -1 to 1, where 1 denotes the best orthogonality, 0 -- a zero volume cell and -1 -- a cell with reversed normal direction or negative volume.
+
+\begin{equation} \label{eq:ortho}
+\text{Orthogonality} = \frac{\vec{A_i} \cdot \vec{f_i}}{|\vec{A_i}| \cdot |\vec{f_i}|}
+\end{equation}
+
+Schematic representation of vectors used for calculation of orthogonality are presented in figure \ref{ortho}.
+
+\begin{figure}[ht!]
+\centering % bo \centering nie wstawia dodatkowego odstępu
+\includegraphics[width=0.85\textwidth]{Pictures/Quality_Orthogonal_cell.png}
+\caption{Vectors Used to Compute Orthogonal Quality for a Cell}
+\label{ortho}
+\end{figure}
+
+For a hexahedral element, skewness is defined as the normalized worst angle between each of the 6 face normals and the vector defined by the centroid of the hexahedron and the center of the face.
+
+\begin{figure}[ht!]
+\centering % bo \centering nie wstawia dodatkowego odstępu
+\includegraphics[width=0.85\textwidth]{Pictures/skew.png}
+\caption{Vectors Used to Compute Orthogonal Quality for a Cell}
+\label{skew}
+\end{figure}
+
+%\begin{equation} \label{eq:skew}
+%\text{Skewness} = \frac{\text{Optimal Cell Size} - \text{Cell Size}}{\text{Optimal Cell Size}}
+%\end{equation}
+
+%\begin{equation} \label{eq:aspect}
+%Aspect Ratio = \frac{MinimumElementEdge}{MaximumElementEdge}
+%\end{equation}
+
+One of the initial mesh concepts was an unstructured mesh with triangular surface mesh extruded to prism boundary layer and mostly isotropic tetrahedra in the volume. This approach was quickly rejected for bad quality elements near the airfoil/hub junction and tip gap, as well as element count in range of 4.5 million cells for sizing relevant for RANS analysis. This approach was quickly dropped.
+
+A non-trivial topology with fully conforming periodic boundaries was introduced (fig \ref{cj_topo}). The topology creates a high quality mesh, yet it is impossible to apply a structural tip gap due to non-conforming element count on the pressure and suction side of the mesh. A RANS sufficient mesh without tip gap area (blade was extended to the casing surface) was created. The cell count for this mesh is below 0.5 million cells with better skewness and orthogonal quality. This mesh was utilized for initial numerical setup and data acquisition testing.
+
+\begin{figure}[h!]
+\centering % bo \centering nie wstawia dodatkowego odstępu
+\includegraphics[width=0.85\textwidth]{Pictures/r67_cj.jpg}
+\caption{Mesh topology with conforming periodic boundaries}
+\label{cj_topo}
+\end{figure}
+
+Final topology was a standard h-grid topology for generic airfoils (fig. \ref{h_topo}). Although it is impossible to create a conforming periodic interface with such mesh topology, a fully structural tip gap was implemented. Omitting the blade-hub juncture fillet simplified the mesh.  Such topology eradicates the necessity of placing 5-way topology points.
+
+\begin{figure}[h!]
+\centering % bo \centering nie wstawia dodatkowego odstępu
+\includegraphics[width=0.85\textwidth]{Pictures/r67_htopo.jpg}
+\caption{Mesh h-topology}
+\label{h_topo}
+\end{figure}
+
+%Mesh was created in Ansys ICEM software using structural blocking method. The topology was sliced and associated to internal surfaces mentioned in the above section. This enforces mesh layering along design streamlines and provides high quality mesh on internal surfaces for flow field data acquisition further in the process. Blade wall boundary condition is distributed among five separate parts: blade pressure side, blade suction side, leading and trailing edges and tip surface. 
+
+As there were no information about the frequency of the pressure fluctuations at time of creating the mesh, the analysis will focus on the audible range of sound frequencies from 20Hz to 20 000Hz. The wavelengths for given frequencies are calculated by formula \ref{eq:wl} and divided by four to obtain the required cell sizing. The velocity of sound obtained by equation \ref{eq:sos} with reference temperature $T = 300K$. The results are presented in table \ref{tab:meshsize}.
+
+\begin{table}[htb!]
+\centering
+\caption{Test case boundary conditions} \label{tab:meshsize}
+\begin{tabular}{@{}rll@{}}
+\toprule
+Frequency [Hz] & Wave length [m] & Cell size [m] \\ \midrule
+20 & 17.390 & 4.347  \\
+20 000 & 0.01739 & 0.004347 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Maximum element edge length is limited to 3 mm, with 5 mm at inlet and outlet boundary conditions. The mesh cell sizing requirements are described in chapter \ref{approach}.  Blade boundary layer is produced by creating an o-grid around blade surface mesh. Hub and casing boundary layers are created by changing the sizing on the blocks adjacent to respective surface mesh. Sizing of the first element is estimated with y+ parameter as described in equation: \ref{eq:yplus}. First element thickness in on the blade surfaces ranges from is $2 \mu m$ on tip airfoil and $10 \mu m$ on hub airfoil. This corresponds to $y^{+} \approx 2$ calculated by streamline velocity values given in experimental study \citep{r67laser}.
+
+\begin{equation} \label{eq:yplus}
+\Delta s = \frac{y^{+} \mu}{U_{fric} \rho}
+\end{equation}
+
+\noindent where:
+\begin{equation}
+U_{fric} = \sqrt{\frac{\tau_{wall}}{\rho}}
+\end{equation}
+
+\noindent where:
+\begin{equation}
+\tau_{wall} = \frac{C_f \rho U_{\infty}^{2}}{2}
+\end{equation}
+
+\noindent where:
+\begin{equation}
+C_f = \frac{0.026}{Re_{x}^{1/7}}
+\end{equation}
+
+Internal volume of the mesh was stabilized by attaching the mesh blocks to the internal design surfaces, which represent the design streamline surfaces of the experimental rotor. This ensures that mesh layers are mostly coincident with the primary flow streamlines. The internal surface mesh is also used for data acquisition purposes. The markers are named \texttt{hub}, \texttt{int-01} thru \texttt{int-12} and \texttt{int-tip} corresponding to following locations of the design surfaces. The span percentage is calculated from the hub.
+
+\begin{table}[htb!]
+\centering
+\caption{Location of compressor desing surfaces} \label{tab:surfs}
+\ttfamily
+\begin{tabular}{@{}rl@{}}
+\toprule
+Boundary marker & Location \\ \midrule
+hub & 0\% span  \\
+int-01 -- int-12 & 7.7\% -- 92.3\% every 7.7\% span \\
+int-tip & 100\% span \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Figure \ref{mesh-ortho} provides overview of mesh quality defined above. The quality of created mesh is sufficient for both RANS and DDES analyses (chapter \ref{cfd}). Final mesh reached c.a. 11.5 million cell count. Final mesh is presented in figure \ref{meshfinal} 
+
+\begin{figure}[h!]
+\centering % bo \centering nie wstawia dodatkowego odstępu
+\includegraphics[width=0.85\textwidth]{Pictures/mesh_ortho.png}
+\caption{Mesh quality histogram}
+\label{mesh-ortho}
+\end{figure}
+
+\begin{figure}[t!]
+\centering % bo \centering nie wstawia dodatkowego odstępu
+\includegraphics[width=0.85\textwidth]{Pictures/r67_ransmesh.jpg}
+\caption{Completed Mesh}
+\label{meshfinal}
+\end{figure}
+
+%----------------------------------------------------------------------------------------
+%	SECTION
+%----------------------------------------------------------------------------------------
+%\section{Data acquisition} \label{casedata}
+%Mesh and case is set up for possibly efficient data acquisition of flow field pressure and velocity data. FLUENT data file from a single timestep takes around 2GB of disk space. Saving such dataset from every of 50150 timesteps requires about 97TB of storage, which was unavailable at the time. 
+%
+%Data was gathered from blade surface (5 boundary markers) and 13 internal markers. Following node data values were saved:
+%
+%\begin{itemize}
+%\item Static pressure
+%\item Velocity magnitude (only internal markers)
+%\item Vorticity magnitude (only internal markers)
+%\item Static density
+%\item Static temperature
+%\item Node coordinates
+%\end{itemize}
+%
+%This approach generated 18 datasets of 50510 files each, resulting in taking up 5.5TB of HPC cluster storage. The number of data is still large but manageable with current software engineering tools. Data was saved to ASCII text files.

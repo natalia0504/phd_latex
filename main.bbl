@@ -1,0 +1,184 @@
+\begin{thebibliography}{10}
+
+\bibitem{annex16}
+International standards and recommended practices. annex 16 to the convention
+  on international civil aviation. environmental protection. volume i. aircraft
+  noise.
+\newblock Technical report, ICAO, 2011.
+
+\bibitem{eurocontrol}
+7-year ifr flight movements and service units forecast: 2013-2019, 2012.
+
+\bibitem{growth_2013}
+Challenges of growth 2013 task 4: European air traffic in 2035, 2013.
+
+\bibitem{fluenttheory}
+{\em ANSYS Documentation. Fluent Theory Guide}, 2015.
+
+\bibitem{prometheus}
+{\em Prometheus HPC maunual}, 2018.
+\newblock https://kdm.cyfronet.pl/portal/Prometheus.
+
+\bibitem{anderson_cfd}
+J.~D. Anderson.
+\newblock {\em Computational Fluid Dynamics}.
+\newblock McGraw-Hill, Inc., 1995.
+
+\bibitem{dahlquist}
+A.~Bjork and G.~Dahlquist.
+\newblock {\em Numerical Methods}.
+\newblock Prentice-Hall, 1974.
+
+\bibitem{bracewell_num}
+R.~Bracewell.
+\newblock {\em The Fourier Transform and Its Applications}.
+\newblock McGraw-Hill, Inc., 1965.
+
+\bibitem{fwhaiaa}
+K.~S. Brentner and F.~Farassat.
+\newblock An analytical comparison of the acoustic analogy and kirchhoff
+  formulations for moving surfaces.
+\newblock {\em AIAA Journal}, 36(8):1379--1386, 1998.
+
+\bibitem{LES_size}
+C.~Choi and P.~Moin.
+\newblock Grid-point requirements for large eddy simulation: Chapman’s
+  estimates revisited.
+\newblock {\em Physics of Fluids}, 24(1), January 2012.
+\newblock https://aip.scitation.org/doi/full/10.1063/1.3676783.
+
+\bibitem{bladecompose}
+J.~E. Crouse, J.~S. David, C.~Janetzke, and R.~E. Schwirian.
+\newblock A computer program for composing blading from simulated circular-arc
+  elements on conical surfaces.
+\newblock Technical Report TN D-5437, NASA Langley Research Center, 1969.
+
+\bibitem{r67design}
+W.~S. Cunnan, W.~Stevans, and D.~C. Urasek.
+\newblock Design and performance of a 427-meter-per-second-tip-speed two stage
+  fan having a 2.40 pressure ratio.
+\newblock Technical Report TP-1314, NASA Langley Research Center, 1978.
+
+\bibitem{curle}
+N.~Curle.
+\newblock The influence of solid boundaries upon aerodynamic~sound.
+\newblock {\em Proceedings of the Royal Society. Series A, Mathematical,
+  Physical and Engineering Sciences}, 231(1187):505--514, September 1955.
+\newblock http://rspa.royalsocietypublishing.org/content/231/1187/505.
+
+\bibitem{hearing}
+J.~D. Durrant and J.~H. Lovrinic.
+\newblock {\em Bases of Hearing Sciences. Second Edition}.
+\newblock Lippincott Williams and Wilkins, 1984.
+
+\bibitem{bousinesque}
+J.~O. Hinze.
+\newblock {\em Turbulence}.
+\newblock McGraw-Hill Publishing Co., 1975.
+
+\bibitem{methods}
+D.~L. Huff.
+\newblock Noise reduction technologies for turbofan engines.
+\newblock Technical Report NASA/TM—2007-214495, NASA Glenn Research Center,
+  2007.
+
+\bibitem{tonal}
+R.~King.
+\newblock Part ii: Turbomachinery.
+\newblock In {\em Active Flow Control II}, pages 134--210, 2010.
+
+\bibitem{ERCD}
+J.~B. Lee, D.~Edmonds, and D.~Rhodes.
+\newblock Ercd report 1101. noise exposure contours for heathrow airport 2010.
+\newblock Technical report, CAA, 2011.
+
+\bibitem{Light1}
+M.~J. Lighthill.
+\newblock On sound generated aerodynamically i. general theory.
+\newblock {\em Proceedings of the Royal Society. Series A, Mathematical,
+  Physical and Engineering Sciences}, 211(1107):564--587, March 1952.
+\newblock http://rspa.royalsocietypublishing.org/content/211/1107/564.
+
+\bibitem{Light2}
+M.~J. Lighthill.
+\newblock On sound generated aerodynamically ii. turbulence as a source of
+  sound.
+\newblock {\em Proceedings of the Royal Society. Series A, Mathematical,
+  Physical and Engineering Sciences}, 222(1148):1--32, March 1954.
+\newblock http://rspa.royalsocietypublishing.org/content/222/1148/1.
+
+\bibitem{github}
+J.~Mosiezny.
+\newblock Github repository for nasa r67 input data and noise analysis, 2018.
+\newblock https://github.com/JedrzejMosiezny/R67-data-analysis.
+
+\bibitem{latex2e}
+T.~Oetkier, H.~Partl, I.~Hyba, and E.~Schleg.
+\newblock {\em The Not So Short Introduction to LATEX 2e}, 2018.
+\newblock https://tobi.oetiker.ch/lshort/lshort.pdf.
+
+\bibitem{combustion}
+A.~Schwarz and J.~Janicka.
+\newblock {\em Combustion Noise}.
+\newblock Springer Science and Business Media, 2009.
+
+\bibitem{LES1}
+J.~Smagorinsky.
+\newblock General circulation experiments with the primitive equations.
+\newblock {\em Monthly Weather Review}, 91(3):99--164, 1963.
+
+\bibitem{ddesspalart}
+P.~R. Spalart et~al.
+\newblock A new version of detached-eddy simulation, resistant to ambiguous
+  grid densities.
+\newblock {\em Theoretical and Computational Fluid Dynamics}, 20:181–195,
+  2006.
+
+\bibitem{desspalart}
+P.~R. Spalart, W.~H. Jou, M.~Strelets, and S.~R. Allmaras.
+\newblock Comments of feasibility of les for wings, and on a hybrid rans/les
+  approach.
+\newblock In {\em First International conference: Advances in DNS LES: Direct
+  numerical simulation and large eddy simulation}, pages 137--148, 1997.
+
+\bibitem{r67laser}
+A.~J. Strazisar, J.~R. Wood, M.~D. Hathaway, and K.~L. Suder.
+\newblock Laser anemometer measurements in a transonic axial-flow fan rotor.
+\newblock Technical Report TP-2897, NASA Langley Research Center, 1989.
+
+\bibitem{traub}
+P.~Traub.
+\newblock Noise aspects of future jet engines.
+\newblock Technical report, LTH Triebwerke, 2012.
+
+\bibitem{r67performance}
+D.~C. Urasek, W.~T. Gorrel, and W.~S. Cunnan.
+\newblock Performance of a two-stage fan having a low-aspect-ratio, first-stage
+  rotor blading.
+\newblock Technical Report TP-1493, NASA Langley Research Center, 1979.
+
+\bibitem{versteeg_cfd}
+H.~K. Versteeg and W.~Malalasekera.
+\newblock {\em An introduction to Computational Fluid Dynamics: The Finite
+  Volume Method}.
+\newblock Longman Scientific \& Technical, 1995.
+
+\bibitem{LES2}
+C.~Wagner, T.~Hüttl, and P.~Sagaut.
+\newblock {\em Large-Eddy Simulation for Acoustics}.
+\newblock Cambridge University Press, 2007.
+
+\bibitem{jm_stat}
+I.~Wieczorek and J.~Mosiężny.
+\newblock Development of air transport in statistical terms.
+\newblock {\em Journal of Mechanical and Transport Engineering}, 66(1):51--68,
+  2013.
+
+\bibitem{FWH}
+J.~E.~F. Williams and D.~L. Hawkings.
+\newblock Sound generation by turbulence and surfaces in arbitrary motion.
+\newblock {\em Philosophical Transactions of the Royal Society of London.
+  Series A, Mathematical and Physical Sciences}, 264(1151):321--342, May 1969.
+\newblock http://www.jstor.org/stable/73790.
+
+\end{thebibliography}

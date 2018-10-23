@@ -1,0 +1,118 @@
+\chapter{Folder Structure} % Main appendix title
+
+\label{folders} % For referencing this appendix elsewhere, use \ref{AppendixA}
+
+\lhead{\emph{Folder Structure}} % This is for the header on each page - perhaps a shortened title
+
+\begin{minipage}{0.75\textwidth}
+\flushleft
+\begin{forest}
+  for tree={
+    font=\ttfamily,
+    grow'=0,
+    child anchor=west,
+    parent anchor=south,
+    anchor=west,
+    calign=first,
+    edge path={
+      \noexpand\path [draw, \forestoption{edge}]
+      (!u.south west) +(7.5pt,0) |- node[fill,inner sep=1.25pt] {} (.child anchor)\forestoption{edge label};
+    },
+    before typesetting nodes={
+      if n=1
+        {insert before={[,phantom]}}
+        {}
+    },
+    fit=band,
+    before computing xy={l=15pt},
+  }
+[flow-data
+	[int-01 $\cdots$ int-tip
+		[ddes analysis output]	
+	]
+	[lead pside sside tip trail
+		[ddes analysis output]	
+	]
+]
+\end{forest}
+\end{minipage}
+
+\vspace{1.0cm}
+
+\begin{minipage}{0.75\textwidth}
+\flushleft
+\begin{forest}
+  for tree={
+    font=\ttfamily,
+    grow'=0,
+    child anchor=west,
+    parent anchor=south,
+    anchor=west,
+    calign=first,
+    edge path={
+      \noexpand\path [draw, \forestoption{edge}]
+      (!u.south west) +(7.5pt,0) |- node[fill,inner sep=1.25pt] {} (.child anchor)\forestoption{edge label};
+    },
+    before typesetting nodes={
+      if n=1
+        {insert before={[,phantom]}}
+        {}
+    },
+    fit=band,
+    before computing xy={l=15pt},
+  }
+[noise-data
+	[int-01-post $\cdots$ int-tip-post
+		[acu
+			[sound-analysis-results]		
+		]
+	]
+	[lead pside sside tip trail
+		[acu
+			[sound-analysis-results]		
+		]
+	]
+]
+\end{forest}
+\end{minipage}
+
+\vspace{1.0cm}
+
+\begin{minipage}{0.75\textwidth}
+\flushleft
+\begin{forest}
+  for tree={
+    font=\ttfamily,
+    grow'=0,
+    child anchor=west,
+    parent anchor=south,
+    anchor=west,
+    calign=first,
+    edge path={
+      \noexpand\path [draw, \forestoption{edge}]
+      (!u.south west) +(7.5pt,0) |- node[fill,inner sep=1.25pt] {} (.child anchor)\forestoption{edge label};
+    },
+    before typesetting nodes={
+      if n=1
+        {insert before={[,phantom]}}
+        {}
+    },
+    fit=band,
+    before computing xy={l=15pt},
+  }
+[results
+	[coords
+		[surface nodes coordinate files]	
+	]
+	[fft
+		[fft analysis results]	
+	]
+	[rms
+		[rms analysis results]	
+	]
+	[plots
+		[output plots]	
+	]
+]
+\end{forest}
+\end{minipage}

@@ -1,0 +1,466 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Masters/Doctoral Thesis 
+% LaTeX Template
+% Version 1.42 (19/1/14)
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Original authors:
+% Steven Gunn 
+% http://users.ecs.soton.ac.uk/srg/softwaretools/document/templates/
+% and
+% Sunil Patel
+% http://www.sunilpatel.co.uk/thesis-template/
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Note:
+% Make sure to edit document variables in the Thesis.cls file
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[11pt, a4paper, twoside]{Thesis} % Paper size, default font size and one-sided paper
+
+\graphicspath{{Pictures/}} % Specifies the directory where pictures are stored
+ 
+\usepackage[square, numbers, comma, sort&compress]{natbib} % Use the natbib reference package - read up on this to edit the reference style; if you want text (e.g. Smith et al., 2012) for the in-text references (instead of numbers), remove 'numbers' 
+\hypersetup{urlcolor=black, colorlinks=false} % Colors hyperlinks in blue - change to black if annoying
+\title{\ttitle} % Defines the thesis title - don't touch this
+
+\frenchspacing
+\usepackage{indentfirst}
+\setlength{\parindent}{18pt}
+\setlength{\parskip}{1ex plus 0.1ex minus 0.1ex}
+
+
+\begin{document}
+
+\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+
+\setstretch{1.3} % Line spacing of 1.3
+
+% Define the page headers using the FancyHdr package and set up for one-sided printing
+\fancyhead{} % Clears all page headers and footers
+\rhead{\thepage} % Sets the right side header to show the page number
+\lhead{} % Clears the left side page header
+
+\pagestyle{fancy} % Finally, use the "fancy" page style to implement the FancyHdr headers
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % New command to make the lines in the title page
+
+
+% PDF meta-data
+\hypersetup{pdftitle={\ttitle}}
+\hypersetup{pdfsubject=\subjectname}
+\hypersetup{pdfauthor=\authornames}
+\hypersetup{pdfkeywords=\keywordnames}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+\begin{center}
+
+\includegraphics[scale=0.5]{pp_logo2} % University/department logo - uncomment to place it
+
+\textsc{\LARGE \univname}\\[1.5cm] % University name
+\textsc{\Large Doctoral Thesis}\\[0.5cm] % Thesis type
+
+\HRule \\[0.4cm] % Horizontal line
+{\huge \bfseries \ttitle}\\[0.4cm] % Thesis title
+\HRule \\[1.5cm] % Horizontal line
+ 
+\begin{minipage}{\textwidth}
+\begin{center} \large
+\emph{Author:} \\
+{\authornames} % Author name - remove the \href bracket to remove the link
+\end{center}
+
+\begin{center} \large
+\emph{Supervisor:} \\
+{\supname} \\ % Author name - remove the \href bracket to remove the link
+\end{center}
+\end{minipage}\\[3cm]
+
+%\begin{minipage}{0.4\textwidth}
+%\begin{flushright} \large
+%\emph{Author:} \\
+%\emph{Supervisor:} \\
+%\emph{1st Auxilary Supervisor:} \\
+%\emph{2nd Auxilary Supervisor:} \\
+%\end{flushright}
+%\end{minipage}
+%\begin{minipage}{0.4\textwidth}
+%\begin{flushleft} \large
+%{\authornames} % Author name - remove the \href bracket to remove the link
+%{\supname} \\ % Supervisor name - remove the \href bracket to remove the link 
+%{\auxnameone} \\ % Supervisor name - remove the \href bracket to remove the link
+%{\auxnametwo} \\ % Supervisor name - remove the \href bracket to remove the link
+%\end{flushleft}
+%\end{minipage}\\[3cm]
+
+ 
+\large \textit{A thesis submitted in fulfilment of the requirements\\ for the degree of \sciencename}\\[0.3cm] % University requirement text
+\textit{in the}\\[0.4cm]
+\facname\\\groupname\\[2cm] % Research group name and department name
+ 
+{\large \today}\\[4cm] % Date
+
+ 
+\vfill
+\end{center}
+
+\end{titlepage}
+\cleardoublepage
+%\newpage\null\thispagestyle{empty}\newpage
+%----------------------------------------------------------------------------------------
+%	DECLARATION PAGE
+%	Your institution may give you a different text to place here
+%----------------------------------------------------------------------------------------
+
+\Declaration{
+
+\addtocontents{toc}{\vspace{0em}} % Add a gap in the Contents, for aesthetics
+
+I, \authornames, declare that this thesis titled, '\ttitle' and the work presented in it are my own. I confirm that:
+
+\begin{itemize} 
+\item[\tiny{$\blacksquare$}] This work was done wholly or mainly while in candidature for a research degree at this University.
+\item[\tiny{$\blacksquare$}] Where any part of this thesis has previously been submitted for a degree or any other qualification at this University or any other institution, this has been clearly stated.
+\item[\tiny{$\blacksquare$}] Where I have consulted the published work of others, this is always clearly attributed.
+\item[\tiny{$\blacksquare$}] Where I have quoted from the work of others, the source is always given. With the exception of such quotations, this thesis is entirely my own work.
+\item[\tiny{$\blacksquare$}] I have acknowledged all main sources of help.
+\item[\tiny{$\blacksquare$}] Where the thesis is based on work done by myself jointly with others, I have made clear exactly what was done by others and what I have contributed myself.\\
+\end{itemize}
+ 
+Signed:\\
+\rule[1em]{25em}{0.5pt} % This prints a line for the signature
+ 
+Date:\\
+\rule[1em]{25em}{0.5pt} % This prints a line to write the date
+}
+
+\cleardoublepage % Start a new page
+%\newpage\null\thispagestyle{empty}\newpage
+%----------------------------------------------------------------------------------------
+%	QUOTATION PAGE
+%----------------------------------------------------------------------------------------
+
+%\pagestyle{empty} % No headers or footers for the following pages
+
+%\null\vfill % Add some space to move the quote down the page a bit
+
+%\textit{``Thanks to my solid academic training, today I can write hundreds of words on virtually any topic without possessing a shred of information, which is how I got a good job in journalism."}
+
+%\begin{flushright}
+%Dave Barry
+%\end{flushright}
+
+%\vfill\vfill\vfill\vfill\vfill\vfill\null % Add some space at the bottom to position the quote just right
+
+%\clearpage % Start a new page
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT PAGE
+%----------------------------------------------------------------------------------------
+
+\addtotoc{Abstract} % Add the "Abstract" page entry to the Contents
+
+\abstract{\addtocontents{toc}{\vspace{0em}} % Add a gap in the Contents, for aesthetics
+
+This thesis proposes a method of assessing flow generated noise in transonic flows by direct formulation.
+
+First a steady state Reynolds Averaged Navier-Stokes analysis of NASA R67 transonic axial compressor is performed as a validation study of the mesh and numerical setup. The result of the steady state analysis is then used as an initialization for transient DDES analysis performed on high quality, 11 million cells hexagonal mesh. The transient analysis covers 0.05s of physical flow time, which corresponds to about 800 revolutions of the rotor. Both steady state and transient simulations are performed on PL-Grid HPC infrastructure.
+
+Transient results are analyzed with an in-house build program. The program uses information about static pressure, transient particle velocity and vorticity from each timestep. This data is then postprocessed into sound pressure levels, sound frequency and effective sound power level.
+
+Information on generation of sound phenomena occurring in the blade passage are gathered from direct formulation and may be used as a validation case for FW-H or other computational aeroacoustic analogies dealing with flows in transonic regimes in rotating machinery. 
+}
+
+\cleardoublepage % Start a new page
+%\newpage\null\thispagestyle{empty}\newpage
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\setstretch{1.3} % Reset the line-spacing to 1.3 for body text (if it has changed)
+
+\acknowledgements{\addtocontents{toc}{\vspace{0em}} % Add a gap in the Contents, for aesthetics
+
+In this place I would like to thank the Chair of Thermal Engineering of Poznań University of Technology, with special recognition to MSc. Eng. Bartosz Ziegler and PhD Eng. Przemysław Grzymisławski for thorough scientific and personal support during this project.
+
+Thanks to PhD Martyna Urbanek -- Trzeciak for thorough training in Python data analysis and support during preparation of Python post processing and visualization scripts.
+
+Thanks to MSc. Eng. Natalia Lewandowska for thorough review, proof reading and providing quality of this work.
+
+A big recognition goes to the owners and maintainers of the PLGRID - Polish HPC infrastructure, especially team in HPC Cyfronet center in AGH University of Science and Technology in Kraków. Being able to use the state of the art HPC clusters for analyses made this project possible.
+
+Thank you to the Python and \LaTeX community worldwide for tips \& tricks, that helped software development and typesetting of this document. All code and typesetting developed for this project is Open Source and publicly available on the project GitHub repository.
+
+
+}
+\cleardoublepage % Start a new page
+%\newpage\null\thispagestyle{empty}\newpage
+%----------------------------------------------------------------------------------------
+%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+%----------------------------------------------------------------------------------------
+
+\pagestyle{fancy} % The page style headers have been "empty" all this time, now use the "fancy" headers as defined before to bring them back
+
+\lhead{\emph{Contents}} % Set the left side page header to "Contents"
+\setcounter{tocdepth}{1}
+\tableofcontents % Write out the Table of Contents
+
+\lhead{\emph{List of Figures}} % Set the left side page header to "List of Figures"
+\listoffigures % Write out the List of Figures
+
+\lhead{\emph{List of Tables}} % Set the left side page header to "List of Tables"
+\listoftables % Write out the List of Tables
+
+%----------------------------------------------------------------------------------------
+%	ABBREVIATIONS
+%----------------------------------------------------------------------------------------
+
+\clearpage % Start a new page
+
+\setstretch{1.0} % Set the line spacing to 1.5, this makes the following tables easier to read
+
+\lhead{\emph{Abbreviations}} % Set the left side page header to "Abbreviations"
+\listofsymbols{ll} % Include a list of Abbreviations (a table of two columns)
+{
+\textbf{APU} & \textbf{A}uxillary \textbf{P}ower \textbf{U}nit \\
+\textbf{BPF} & \textbf{B}lade \textbf{P}assing \textbf{F}requency \\
+\textbf{CAA} & \textbf{C}omputational \textbf{A}ero \textbf{A}coustics \\
+\textbf{CAEP} & \textbf{C}ommitee on \textbf{A}ircraft \textbf{E}ngine \textbf{E}missions\\
+\textbf{CDA} & \textbf{C}ontinuous \textbf{D}escent \textbf{A}pproach \\
+\textbf{CFD} & \textbf{C}omputational \textbf{F}luid \textbf{D}ynamics \\
+\textbf{CS} & \textbf{C}oordinate \textbf{S}ystem \\
+\textbf{DDES} & \textbf{D}elayed \textbf{D}etached \textbf{E}ddy \textbf{S}imulation \\
+\textbf{DES} & \textbf{D}etached \textbf{E}ddy \textbf{S}imulation \\
+\textbf{DFT} & \textbf{D}iscrete \textbf{F}ourier \textbf{T}ransform \\
+\textbf{DNS} & \textbf{D}irect \textbf{N}umerical \textbf{S}ituation \\
+\textbf{EPNdB} & \textbf{E}ffective \textbf{P}erceived \textbf{N}oise \textbf{dB} \\
+\textbf{FMG} & \textbf{F}ull \textbf{M}ulti \textbf{G}rid \\
+\textbf{FVM} & \textbf{F}inite \textbf{V}olume \textbf{M}ethod \\
+\textbf{FWH} & \textbf{F}fowcks \textbf{W}illiams \textbf{H}awkings \\
+\textbf{HPC} & \textbf{H}ight \textbf{P}ower \textbf{C}omputing \\
+\textbf{HVAC} & \textbf{H}eating \textbf{V}entilation \textbf{A}ir \textbf{C}onditioning\\
+\textbf{ICAO} & \textbf{I}nternational \textbf{C}ivil \textbf{A}viation \textbf{O}rganization\\
+\textbf{IFR} & \textbf{I}nstrumental \textbf{F}light \textbf{R}rules \\
+\textbf{ILU} & \textbf{I}ncomplete \textbf{L}ower \textbf{U}pper \\
+\textbf{LDA} & \textbf{L}aser \textbf{D}oppler \textbf{A}nemometry \\
+\textbf{LES} & \textbf{L}arge \textbf{E}ddy \textbf{S}imulation \\
+\textbf{MCA} & \textbf{M}ultiple \textbf{C}ircular \textbf{A}pproach \\
+\textbf{MTOW} & \textbf{M}aximum \textbf{T}ake \textbf{O}ff \textbf{W}eight\\
+\textbf{N-S} & \textbf{N}avier \textbf{S}tokes \\
+\textbf{PISO} & \textbf{P}ressure \textbf{I}mplicit with \textbf{S}plitting of \textbf{O}perators\\
+\textbf{RANS} & \textbf{R}eynolds \textbf{A}veraged \textbf{N}navier \textbf{S}tokes\\
+\textbf{RMS} & \textbf{R}oot \textbf{M}ean \textbf{S}quare \\
+\textbf{S-A} & \textbf{S}pallart \textbf{A}llmaras \\
+\textbf{SAS} & \textbf{S}cale \textbf{A}daptive \textbf{S}imulation \\
+\textbf{SBES} & \textbf{S}tress \textbf{B}lended \textbf{E}ddy \textbf{S}imulation \\
+\textbf{SDES} & \textbf{S}hielded \textbf{D}etached \textbf{E}ddy \textbf{S}imulation \\
+\textbf{SGS} & \textbf{S}ub \textbf{G}rid \textbf{S}cale \\
+\textbf{SPLdB} & \textbf{S}ound \textbf{P}ressure \textbf{L}evel \textbf{dB} \\
+\textbf{SILdB} & \textbf{S}ound \textbf{I}ntensity \textbf{L}evel \textbf{dB} \\
+\textbf{SRS} & \textbf{S}cale \textbf{R}esolving \textbf{S}imulation \\
+\textbf{SST} & \textbf{S}hear \textbf{S}tress \textbf{T}ransport \\
+
+%\textbf{LAH} & \textbf{L}ist \textbf{A}bbreviations \textbf{H}ere \\
+%\textbf{Acronym} & \textbf{W}hat (it) \textbf{S}tands \textbf{F}or \\
+}
+
+%----------------------------------------------------------------------------------------
+%	PHYSICAL CONSTANTS/OTHER DEFINITIONS
+%----------------------------------------------------------------------------------------
+
+%\clearpage % Start a new page
+
+%\lhead{\emph{Physical Constants}} % Set the left side page header to "Physical Constants"
+
+%\listofconstants{lrcl} % Include a list of Physical Constants (a four column table)
+%{
+%Speed of Light & $c$ & $=$ & $2.997\ 924\ 58\times10^{8}\ \mbox{ms}^{-\mbox{s}}$ (exact)\\
+% Constant Name & Symbol & = & Constant Value (with units) \\
+%}
+
+%----------------------------------------------------------------------------------------
+%	SYMBOLS
+%----------------------------------------------------------------------------------------
+
+\clearpage % Start a new page
+
+\lhead{\emph{Symbols}} % Set the left side page header to "Symbols"
+
+\listofnomenclature{lll} % Include a list of Symbols (a three column table)
+{
+$A_i$ & Vector normal to cell wall at wall center & -\\
+$Amp$ & Amplitude & -\\
+$C_p$ & Specific heat at constant pressure & J/(kg $\cdot$ K)\\
+$Co$ & Courant number & -\\
+$G$ & Filter function & -\\
+$M$ & Moll weight & kg/kmol\\
+$Ma$ & Mach number & -\\
+$N$ & Total number of samples & -\\
+$H(f)$ & Heaviside function & -\\
+$P_{i}$ & Dipole acoustical strength & Pa\\
+$P_{ij}$ & Compression stress tensor & -\\
+$Q(x, t)$ & Mass introduced to system & kg\\
+$R$ & Gas constant & J/(kg $\cdot$ K) \\
+$Re$ & Reynolds number & -\\
+$S$ & Discontinuity surface & -\\
+$S_{ij}$ & Rate of Strain Tensor & -\\
+$T$ & Temperature & K \\
+$T_{ij}$ & Lighthill stress tensor & -\\
+$U$ & Velocity vector & -\\
+$V$ & Integration volume & -\\
+$X$ & DFT complex coefficient & -\\
+$a$ & Speed of sound & m/s \\
+$d$ & Mesh wall spacing & m \\
+$e$ & Euler number & - \\
+$f$ & Frequency & Hz \\
+$f_i$ & Vector connecting cell centroid and cell wall center & - \\
+$j$ & Imaginary number & - \\
+$k$ & k-th frequency bin & -\\
+$k$ & Turbulence kinetic energy & J/kg\\
+$n$ & Normal vector, n-th sample, blade count, cell count & -\\
+$p$ & Pressure & Pa \\
+$q(t)$ & Mass introduction rate & kg/s \\
+$r$ & Radiation vector & m \\
+$\Delta s$ & Mesh first layer thickness & m \\
+$t$ & Time & s\\
+$u, v, w$ & Velocity component & m/s \\
+$x, y, z$ & Distance over coordinate, location coordinate & m\\
+% Symbol & Name & Unit \\
+\clearpage
+%& & \\ % Gap to separate the Roman symbols from the Greek
+$\Delta$ & Mesh wall spacing (Spalart-Allmaras)& m\\
+$\Sigma$ & Surface of discontinuity & -\\
+$\Omega$ & Mean rate of rotation & - \\
+$\delta$ & Mesh wall spacing (Spalart-Allmaras)& m \\
+$\delta_{ij}$, $\delta(f)$ & Dirac delta & - \\
+$\eta$ & Kolmogorov limit & - \\
+$\theta$ & Phase shift & rad\\
+$\kappa$ & Specific Heat Ratio & - \\
+$\lambda$ & Wavelength & m \\
+$\lambda$ & Heat conductivity coefficient & W/(m $\cdot$ K) \\
+$\phi$ & Conservation variable & - \\
+$\phi '$ & Variable offset from average & - \\
+$\bar{\phi}$ & Filtered variable (LES derivation) & - \\
+$\bar{\phi}$ & Averaged variable (direct approach) & - \\
+$\tilde{\phi}$ & Density weighted filtering operator (LES derivation) & - \\
+$\mu$ & Dynamic viscosity & Pa $\cdot$ s \\
+$\mu_t$ & Turbulent viscosity & Pa $\cdot$ s \\
+$\nu$ & Kinematic viscosity &  $m^2$/s \\
+$\tilde{\nu}$ & Modified turbulent kinematic viscosity &  $m^2$/s \\ 
+$\rho$ & Density & kg/m$^3$ \\
+$\sigma_{ij}$ & Molecular viscosity stress tensor & - \\
+$\tau$ & Retarded time & s \\
+$\tau_{ij}$ & Subgrid scale tensor & s \\
+$\omega$ & Angular frequency & rads$^{-1}$ \\
+$\omega$ & Turbulence specific dissipation rate & 1/s \\
+% Symbol & Name & Unit \\
+}
+
+%----------------------------------------------------------------------------------------
+\clearpage % Start a new page
+
+\lhead{\emph{Indices}} % Set the left side page header to "Symbols"
+
+\listofindices{lll} % Include a list of Symbols (a three column table)
+{
+$0$ & initial, ambient conditions & -\\
+$fric$ & denotes friction component & -\\
+$i, j, k$ & summation indices & - \\
+$k$ & k-th sample, frequency bin & -\\
+$n$ & normal direction & -\\
+$r$ & radiation direction & -\\
+$particle$ & denotes particle specific value & -\\
+$ref$ & denotes reference value & -\\
+$sound$ & denotes sound value & -\\
+$wall$ & denotes near wall component & -\\
+$wm$ & wall modeled & -\\
+$wr$ & wall resolved & -\\
+$x, y, z$ & denotes direction of variable & m\\
+% Symbol & Name & Unit \\
+
+& & \\ % Gap to separate the Roman symbols from the Greek
+%$\Sigma$ & surface of discontinuity & -\\
+% Symbol & Name & Unit \\
+}
+
+%----------------------------------------------------------------------------------------
+%	DEDICATION
+%----------------------------------------------------------------------------------------
+
+\setstretch{1.3} % Return the line spacing back to 1.3
+
+\pagestyle{empty} % Page style needs to be empty for this page
+
+\dedicatory{To my wife. For limitless patience\ldots} % Dedication text
+
+%\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+
+\mainmatter % Begin numeric (1,2,3...) page numbering
+
+\pagestyle{fancy} % Return the page headers back to the "fancy" style
+
+% Include the chapters of the thesis as separate files from the Chapters folder
+% Uncomment the lines as you write the chapters
+
+\input{Chapters/introduction}
+\input{Chapters/current_CAA}
+\input{Chapters/approach}
+\input{Chapters/test_case}
+\input{Chapters/cfd} 
+\input{Chapters/results}
+\input{Chapters/conclusions}
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - APPENDICES
+%----------------------------------------------------------------------------------------
+
+%\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+
+\appendix % Cue to tell LaTeX that the following 'chapters' are Appendices
+
+% Include the appendices of the thesis as separate files from the Appendices folder
+% Uncomment the lines as you write the Appendices
+
+\input{Appendices/Appendix_rmsresults}
+\input{Appendices/Appendix_fftresults}
+\input{Appendices/Appendix_cfdresults}
+\input{Appendices/Appendix_direct}
+\input{Appendices/Appendix_folders}
+\input{Appendices/Appendix_rms}
+\input{Appendices/Appendix_fft}
+\input{Appendices/Appendix_coords}
+
+%\addtocontents{toc}{\vspace{2em}} % Add a gap in the Contents, for aesthetics
+
+\backmatter
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+\label{Bibliography}
+
+\lhead{\emph{Bibliography}} % Change the page header to say "Bibliography"
+
+\bibliographystyle{abbrv} % "abbrv" Use the "unsrtnat" BibTeX style for formatting the Bibliography
+\nocite{*}
+\bibliography{Bibliography} % The references (bibliography) information are stored in the file named "Bibliography.bib"
+
+\end{document}  
