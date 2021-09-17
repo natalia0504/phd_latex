@@ -17,7 +17,7 @@
 + atherosclerosis - diagnose and classification for plaque removal
 + atherosclerosis - postoperative complications (restenosis)
 + atherosclerosis - biomechanical causes
-+
+
 ### Chapter  "Liteature review - CFD and methodology"
 + areas of research
 + artery geometry modelling: 2D, 3D
