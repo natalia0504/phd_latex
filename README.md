@@ -2,7 +2,7 @@
 
 ## Work structure
 
-### Chapter "Iintrodution and main objectives"
+### Chapter 1 "Introdution and main objectives"
 + interdisciplinary approach for blood flow modelling
 + definition of aterosclerosis
 + statistical data
@@ -10,7 +10,7 @@
 + main goal of PhD: define a new group of diagnostic parametres for carotid geometry
 + overview of dissertation 
 
-### Chapter "Literature review - medical issues"
+### Chapter 2 "Literature review - medical issues"
 + atherosclerosis - chemical causes
 + atherosclerosis - plaque structure, composition and shape
 + atherosclerosis - statistical data
@@ -18,7 +18,7 @@
 + atherosclerosis - postoperative complications (restenosis)
 + atherosclerosis - biomechanical causes
 
-### Chapter  "Liteature review - CFD and methodology"
+### Chapter 3 "Liteature review - CFD and methodology"
 + areas of research
 + artery geometry modelling: 2D, 3D
 + blood fluid model
@@ -30,21 +30,21 @@
 + conclusion and most significant observations so far
 + overview of CFD methods: consercative, meshless
 
-### Chapter "Summary of research so far"
+### Chapter 4 "Summary of research so far"
 + establishing of surgical patch shape and comparision with the nes used so far
 + influece of patch lenght and width for different arteries diameters
 + plaque shape and plaque deposition modelling
 + influence of the bifurcation angle between ICA and ECA of blood flow disturbances
 + meshing strategy and validation
 
-### Chapter "CFD theory"
+### Chapter 5 "CFD theory"
 + concept of general transport equation: convective and diffusive fluxes
 + constitutive equations: continuity and momentum equation
 + concept of discretization for partial differential equation
 + RANS vs DNS vs LES
 + wall function and y+: turbulence modelling and turbulence models for RANS
 
-### Chapter "Fluid mechanics of blood flow"
+### Chapter 6 "Fluid mechanics of blood flow"
 + flow in variable geometry channels
 + Cauchy tensor and concept of viscosity
 + separation of boundary layer and reversed flow, vortex creation
@@ -55,7 +55,7 @@
 + pulsative flow: Reynolds number and Womersley velocity profile, Womersley nummber
 + pulsative flow: Windkessel model
 
-### Chapter "Methodology: geometry and numerical scheme"
+### Chapter 7 "Methodology: geometry and numerical scheme"
 + CA geometric description 
 + patient-specific geometries
 + Taguchi method: CA geometry models description
@@ -63,7 +63,7 @@
 + boundary conditions implementations
 + final numerical setup
 
-### Chapter "Results and discussion for models"
+### Chapter 8 "Results and discussion for models"
 + Taguchi table summary
 + WSS distribution in time in marked areas
 + velocity distribution in time in areas of interest
@@ -71,10 +71,10 @@
 + pressure distribution along the CCA, ICA and ECA
 + velocity and RRT contours for couple of cases
 
-### Chapter "Diagnostic parametr and its evaluation od patient specific geometries"
+### Chapter 9 "Diagnostic parametr and its evaluation od patient specific geometries"
 + to be continued...
 
-### Chapter "Conlusions"
+### Chapter 10 "Conlusions"
 + establishing of final formula for diagnostic parameter
 + description of GUI for surgeon for selection of proper patch geometry??? (nie wiem czy to nie za dużo...._
 
